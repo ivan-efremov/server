@@ -24,7 +24,7 @@ int main(int argc, const char* argv[])
     }
     server.stop();
   } catch(const std::exception& err) {
-    std::cerr << "Error: " << err.what() << std::endl;
+      std::cerr << "Error: " << err.what() << std::endl;
   }
   return 0;
 }
