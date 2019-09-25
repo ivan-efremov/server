@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-pipe -DDEBUG -Wall -ggdb -O0 ${CMAKE_CXX_FLAGS_ALL}"
 
 set(CMAKE_CXX_FLAGS_RELEASE "-pipe -DNDEBUG -Wall -g0 -O2 -s ${CMAKE_CXX_FLAGS_ALL}")
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES Server.cpp main.cpp)
 
 add_executable(server ${SOURCE_FILES})
 
