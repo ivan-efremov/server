@@ -3,6 +3,7 @@
 #include <memory>
 #include <utility>
 
+using ba::ip::tcp;
 
 Connection::Connection(tcp::socket socket)
     : m_socket(std::move(socket))
