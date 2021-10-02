@@ -1,4 +1,4 @@
-#include "Server.h"
+#include "TcpServer.h"
 #include <iostream>
 #include <memory>
 #include <utility>
@@ -52,7 +52,7 @@ void Connection::doWrite(std::size_t length)
   ba::async_write(
     m_socket,
     ba::buffer(m_buffer),
-    [this, self](const bs::error_code& err, std::size_t length) {
+    [this, self](const bs::error_code& err, std::size_t transferred) {
       if(err) {
         throw std::runtime_error(std::string("Connection::doWrite(): ") + err.message());
       } else {

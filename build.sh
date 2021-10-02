@@ -9,29 +9,25 @@ case $1 in
                 echo "        ./build clean          - Clean all objects files."
                 ;;
         "debug" )
-#                rm -Rf obj
-                mkdir -p obj
-                cd obj
+                mkdir -p bin
+                cd bin
                 cmake -DCMAKE_BUILD_TYPE=Debug ../ && make
                 cd ..
                 ;;
         "release" )
-                rm -Rf obj
-                mkdir -p obj
+                mkdir -p bin
                 cd obj
                 cmake -DCMAKE_BUILD_TYPE=Release ../ && make
                 cd ..
                 ;;
         "clean" )
-                cd obj
-                make clean
-                cd ..
+                rm -Rf bin
                 ;;
         * )
-                if [ ! -d "obj" ]; then
+                if [ ! -d "bin" ]; then
                     $0 debug
                 else
-                    cd obj
+                    cd bin
                     make
                     cd ..
                 fi

@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <iostream>
-#include "Server.h"
+#include "TcpServer.h"
 
 // For test:
 //  ab -k -n 100000 -c 10 http://127.0.0.1:8080/
@@ -24,7 +24,7 @@ int main(int argc, const char* argv[])
     }
     server.stop();
   } catch(const std::exception& err) {
-      std::cerr << "Error: " << err.what() << std::endl;
+    std::cerr << "Error: " << err.what() << std::endl;
   }
   return 0;
 }

@@ -1,5 +1,5 @@
 /**
- * @file Server.h
+ * @file TcpServer.h
  */
 
 #pragma once
@@ -19,7 +19,8 @@ class Connection:
   public std::enable_shared_from_this<Connection>
 {
   enum {
-    BUFFER_SIZE = 131072
+//    BUFFER_SIZE = 65536
+    BUFFER_SIZE = 1536
   };
 public:
   Connection(ba::ip::tcp::socket socket);
